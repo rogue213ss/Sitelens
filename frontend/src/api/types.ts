@@ -15,3 +15,28 @@ export interface ScanStatusInfo {
   status: ScanStatus;
   error: string | null;
 }
+
+export interface ScanPageInfo {
+  requested_url: string;
+  final_url: string;
+  page_title: string;
+  status_code: number;
+  content_type: string | null;
+  viewport: string | null;
+  user_agent: string | null;
+  html: string | null;
+}
+
+export interface ScanResults {
+  id: string;
+  status: ScanStatus;
+  error: string | null;
+  page: ScanPageInfo | null;
+  links: any[];
+  scripts: any[];
+  stylesheets: any[];
+  images: any[];
+  network_requests: any[];
+  performance: any | null;
+  has_screenshot: boolean;
+}
